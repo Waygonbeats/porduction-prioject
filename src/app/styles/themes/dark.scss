@@ -1,9 +1,10 @@
-.app.light {
-    --bg-color: #eaedf0;
-    --text-color: #212529;
+.app.dark {
+    --bg-color: #24303c;
+    --inverted-bg-color: #f8f9fa; 
+    --text-color: #f8f9fa;
     --primary-color: #007bff;
-    --secondary-color   : #6c757d;
+    --secondary-color: #6c757d;
     --font-family: 'Helvetica Neue', Arial, sans-serif;
     --font-size-m: 16px;
     --line-height-m: 1.5;
-}
+}   

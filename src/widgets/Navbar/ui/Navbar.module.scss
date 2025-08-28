@@ -1,0 +1,14 @@
+.navbar {
+  background: var(--inverted-bg-color);
+  padding: 12px 16px;
+}
+
+.navbar a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}

@@ -5,8 +5,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
   const typescriptLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
+    use: {
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: isDev, // Ускорение сборки в dev-режиме
+      },
+    },
     exclude: /node_modules/,
+  };
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
   };
 
   const cssLoader = {
@@ -27,5 +36,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       'sass-loader',
     ],
   };
-  return [typescriptLoader, cssLoader];
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|ico)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  };
+  return [svgLoader, fileLoader, typescriptLoader, cssLoader];
 }

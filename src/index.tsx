@@ -1,9 +1,10 @@
 
 
 import { BrowserRouter } from 'react-router-dom';
-import App, { Theme } from './App';
+import App, { Theme } from './app/App';
 import { render } from 'react-dom';
-import ThemeProvider from './styles/theme/ThemeProvider';
+import { ThemeProvider } from './app/providers/ThemeProvider';
+
 
 
 render(
